@@ -1,18 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          waleed hello
-        </p>
+import React from 'react'
 
-      </header>
-    </div>
-  );
+class MyComponent extends React.Component {
+  render () {
+    const cityArray = ['Karachi', 'Lahore', 'Peshawar', 'Quetta']
+
+    return (
+      <ul>
+        {
+          cityArray.map((city) => <li key={city}> {city} </li>)
+        }
+      </ul>
+    )
+  }
+}
+
+function App () {
+  return (<MyComponent />)
 }
 
 export default App;
