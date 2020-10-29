@@ -35,4 +35,4 @@ jobs:
       - name: Installing Surge
         run: npm install -g surge
       - name: Deploying On Surge
-        run: surge ./build  http://saad-bootcamp2.surge.sh/ --token $ {{secrets.SURGE_TOKEN}}
+        run: surge ./build  http://saad-bootcamp2.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
