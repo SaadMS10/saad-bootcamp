@@ -1,24 +1,17 @@
-
+import React from 'react';
 import './App.css';
-
-import React from 'react'
-
-class MyComponent extends React.Component {
-  render () {
-    const cityArray = ['Karachi', 'Lahore', 'Peshawar', 'Quetta']
-
-    return (
-      <ul>
-        {
-          cityArray.map((city) => <li key={city}> {city} </li>)
-        }
-      </ul>
-    )
-  }
-}
-
-function App () {
-  return (<MyComponent />)
+import Dinner from './dinner.js';
+function App() {
+  return (
+    <div className='App'>
+      {/* <Dinner></Dinner> */}
+      <Dinner dishName='Nihaari' sweetDish='Kheer' />
+      <hr />
+      <Dinner dishName='Biryani' sweetDish='Jaleebi' />
+      <hr />
+      <Dinner dishName='Karahi' sweetDish='Gajar ka Halwa' />
+    </div>
+  );
 }
 
 export default App;
