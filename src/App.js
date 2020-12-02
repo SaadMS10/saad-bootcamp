@@ -1,31 +1,66 @@
-import React, { useState } from 'react';
-import { Message } from './message.js'
+import React from 'react';
+
+// Import CSS
 import './App.css';
 
-export default function App() {
+// Import Components
+import { Header } from './components/Header';
+import { Balance } from './components/Balance';
+import { AccountSummary } from './components/AccountSummary';
+import { TransactionHistory } from './components/TransactionHistory';
+import { AddTransaction } from './components/AddTransaction';
 
-  let [count, setCount] = useState(1);
-  let [isMorning, setMorning] = useState(false)
+// Import Provider
+import { GlobalProvider } from './context/GlobalState';
 
+function App() {
   return (
-    <div className={`box ${isMorning ? 'dayLight' : ''}`}>
-
-      <h1>Good {isMorning ? 'Morning' : 'Night'}</h1>
-
-      <Message counter={count} />
-      <br />
-
-      <button onClick={() => setCount(count + 1)}>
-        Update Counter
-      </button>
-
-      <button onClick={() => setMorning(!isMorning)}> 
-        Update Day
-      </button>
-
-    </div>
+      <GlobalProvider>
+        <Header />
+        <div className="container">
+          <Balance />
+          <AccountSummary />
+          <TransactionHistory />
+          <AddTransaction />
+        </div>
+      </GlobalProvider>
   );
 }
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { Message } from './message.js'
+// import React, {UseContext } from './ContextProvider';
+// import './App.css';
+
+// export default function App() {
+
+//   let [count, setCount] = useState(1);
+//   let [isMorning, setMorning] = useState(false)
+
+//   return (
+//     <div className={`box ${isMorning ? 'dayLight' : ''}`}>
+
+//       <h1>Good {isMorning ? 'Morning' : 'Night'}</h1>
+
+//       <Message counter={count} />
+//       <br />
+
+//       <button onClick={() => setCount(count + 1)}>
+//         Update Counter
+//       </button>
+
+//       <button onClick={() => setMorning(!isMorning)}> 
+//         Update Day
+//       </button>
+
+//     </div>
+//   );
+
 // function App() {
 //   return (
 //     <div className='App'>
@@ -43,4 +78,4 @@ export default function App() {
 //   );
 // }
 
-// export default App;
+export default App;
